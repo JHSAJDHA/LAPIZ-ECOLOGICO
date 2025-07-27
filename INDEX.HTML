@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emprendimiento Verde – Lápiz Ecológico con Semilla</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #e0f2f7; /* Light blue for eco feel */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .presentation-container {
+            background-color: #ffffff;
+            border-radius: 1.5rem; /* Rounded corners */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            max-width: 900px;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 600px; /* Ensure a minimum height for the presentation */
+        }
+        .slide {
+            display: none;
+            padding: 2.5rem; /* Increased padding */
+            flex-grow: 1;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .slide.active {
+            display: flex;
+        }
+        .slide-title {
+            font-size: 2.5rem; /* Larger title */
+            font-weight: 700;
+            color: #2c5282; /* Darker blue for titles */
+            margin-bottom: 2rem;
+        }
+        .slide-content {
+            font-size: 1.25rem; /* Larger content text */
+            line-height: 1.8;
+            color: #4a5568; /* Grayish text */
+            max-width: 700px;
+        }
+        .slide-content ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 1.5rem;
+        }
+        .slide-content ul li {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slide-content ul li svg {
+            margin-right: 0.75rem;
+            color: #38a169; /* Green for icons */
+        }
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            padding: 1.5rem 2.5rem; /* Padding for buttons */
+            border-top: 1px solid #edf2f7; /* Light border */
+        }
+        .nav-button {
+            background-color: #48bb78; /* Green button */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem; /* Rounded buttons */
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            border: none;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .nav-button:hover {
+            background-color: #38a169; /* Darker green on hover */
+            transform: translateY(-2px);
+        }
+        .nav-button:disabled {
+            background-color: #a0aec0; /* Gray when disabled */
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .presentation-container {
+                min-height: 500px;
+            }
+            .slide {
+                padding: 1.5rem;
+            }
+            .slide-title {
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+            }
+            .slide-content {
+                font-size: 1rem;
+            }
+            .navigation-buttons {
+                padding: 1rem 1.5rem;
+            }
+            .nav-button {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            .presentation-container {
+                min-height: 400px;
+            }
+            .slide {
+                padding: 1rem;
+            }
+            .slide-title {
+                font-size: 1.75rem;
+                margin-bottom: 1rem;
+            }
+            .slide-content {
+                font-size: 0.9rem;
+            }
+            .navigation-buttons {
+                flex-direction: column;
+                gap: 10px;
+                padding: 1rem;
+            }
+            .nav-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Presentation Title Slide -->
+        <div id="slide-0" class="slide active">
+            <h1 class="slide-title text-emerald-600">Emprendimiento Verde</h1>
+            <h2 class="slide-title text-emerald-700">Lápiz Ecológico con Semilla</h2>
+            <p class="slide-content text-gray-700">Una presentación sobre nuestra misión, visión, valores y principios.</p>
+            <div class="mt-8">
+                <!-- SVG for a pencil icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-24 h-24 text-lime-600">
+                    <path d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-14.062 14.061a2.625 2.625 0 0 0 0 3.713l4.875 4.875c.189.189.427.33.674.444l.79-.198a2.625 2.625 0 0 0 1.962 1.096c.212 0 .424-.03.626-.09L21.731 6.001a2.625 2.625 0 0 0 0-3.712ZM16.03 7.85l-1.89-1.89-2.73 2.73 1.89 1.89 2.73-2.73ZM13.43 12.02l-1.89-1.89-2.73 2.73 1.89 1.89 2.73-2.73Z" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Slide 1: Misión -->
+        <div id="slide-1" class="slide">
+            <h2 class="slide-title">Misión</h2>
+            <p class="slide-content">Ofrecer una alternativa ecológica y educativa a través de lápices biodegradables con semillas, promoviendo la conciencia ambiental y la reforestación desde el uso cotidiano.</p>
+            <div class="mt-8">
+                <!-- SVG for a plant/seedling icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-20 h-20 text-green-600">
+                    <path fill-rule="evenodd" d="M11.47 2.47a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 0 1-1.06 1.06L12 4.06l-3.22 3.22a.75.75 0 0 1-1.06-1.06l3.75-3.75ZM12 4.5v9.75a.75.75 0 0 1-1.5 0V4.5h-2.25A2.25 2.25 0 0 0 6 6.75v.75a.75.75 0 0 1-1.5 0v-.75a3.75 3.75 0 0 1 3.75-3.75h2.25ZM12 19.5h2.25a2.25 2.25 0 0 0 2.25-2.25v-.75a.75.75 0 0 1 1.5 0v.75a3.75 3.75 0 0 1-3.75 3.75H12V19.5Z" clip-rule="evenodd" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Slide 2: Visión -->
+        <div id="slide-2" class="slide">
+            <h2 class="slide-title">Visión</h2>
+            <p class="slide-content">Ser un referente en productos sostenibles en América Latina, inspirando a las nuevas generaciones a sembrar conciencia y construir un futuro más verde, desde un simple lápiz.</p>
+            <div class="mt-8">
+                <!-- SVG for a globe/world icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-20 h-20 text-blue-600">
+                    <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z" clip-rule="evenodd" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Slide 3: Valores -->
+        <div id="slide-3" class="slide">
+            <h2 class="slide-title">Valores</h2>
+            <ul class="slide-content">
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                        <path fill-rule="evenodd" d="M11.47 2.47a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 0 1-1.06 1.06L12 4.06l-3.22 3.22a.75.75 0 0 1-1.06-1.06l3.75-3.75ZM12 4.5v9.75a.75.75 0 0 1-1.5 0V4.5h-2.25A2.25 2.25 0 0 0 6 6.75v.75a.75.75 0 0 1-1.5 0v-.75a3.75 3.75 0 0 1 3.75-3.75h2.25ZM12 19.5h2.25a2.25 2.25 0 0 0 2.25-2.25v-.75a.75.75 0 0 1 1.5 0v.75a3.75 3.75 0 0 1-3.75 3.75H12V19.5Z" clip-rule="evenodd" />
+                    </svg>
+                    Sostenibilidad: Cuidamos el planeta en cada producto.
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                        <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z" clip-rule="evenodd" />
+                    </svg>
+                    Conciencia ambiental: Educamos y promovemos buenas prácticas.
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                        <path fill-rule="evenodd" d="M12 2.25a.75.75 0 0 1 .75.75v6.75a.75.75 0 0 1-1.5 0V3A.75.75 0 0 1 12 2.25ZM12 10.5a.75.75 0 0 1 .75.75v8.25a.75.75 0 0 1-1.5 0V11.25a.75.75 0 0 1 .75-.75ZM18.75 7.5a.75.75 0 0 0-.75.75v13.5a.75.75 0 0 0 1.5 0V8.25a.75.75 0 0 0-.75-.75ZM5.25 7.5a.75.75 0 0 0-.75.75v13.5a.75.75 0 0 0 1.5 0V8.25a.75.75 0 0 0-.75-.75Z" clip-rule="evenodd" />
+                    </svg>
+                    Innovación: Convertimos objetos comunes en agentes de cambio.
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                        <path fill-rule="evenodd" d="M15.75 4.5a3 3 0 1 1 .825 2.942l-2.043 2.043a6.75 6.75 0 0 1 0 9.546l-1.725 1.725c.08.196.142.404.183.622l.356 1.968a.75.75 0 0 1-.582.816l-1.968.356a.75.75 0 0 1-.816-.582l-.356-1.968a4.5 4.5 0 0 0-.183-.622l-1.725-1.725a6.75 6.75 0 0 1 0-9.546l2.043-2.043A3.001 3.001 0 0 1 15.75 4.5Z" clip-rule="evenodd" />
+                </svg>
+                    Compromiso social: Apoyamos la reforestación y la educación ambiental.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Slide 4: Principios Corporativos -->
+        <div id="slide-4" class="slide">
+            <h2 class="slide-title">Principios Corporativos</h2>
+            <ul class="slide-content">
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                        <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm8.706-1.442c1.146-.573 2.437-.925 3.79-.925 1.353 0 2.644.352 3.79.925.413.205.73.513.91.873.284.57.24 1.28-.13 1.836l-4.5 6.75a.75.75 0 0 1-1.22-.573v-5.073a.75.75 0 0 0-.75-.75H9.75a.75.75 0 0 0-.75.75v5.073a.75.75 0 0 1-1.22.573l-4.5-6.75c-.37-.556-.414-1.266-.13-1.836.18-.36.497-.668.91-.873Z" clip-rule="evenodd" />
+                    </svg>
+                    Actuar con responsabilidad ambiental en todos los procesos.
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                        <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 0 0 0-1.5h-3.75V6Z" clip-rule="evenodd" />
+                    </svg>
+                    Usar materiales biodegradables y reciclables.
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                        <path fill-rule="evenodd" d="M11.47 2.47a.75.75 0 0 1 1.06 0l3.75 3.75a.75.75 0 0 1-1.06 1.06L12 4.06l-3.22 3.22a.75.75 0 0 1-1.06-1.06l3.75-3.75ZM12 4.5v9.75a.75.75 0 0 1-1.5 0V4.5h-2.25A2.25 2.25 0 0 0 6 6.75v.75a.75.75 0 0 1-1.5 0v-.75a3.75 3.75 0 0 1 3.75-3.75h2.25ZM12 19.5h2.25a2.25 2.25 0 0 0 2.25-2.25v-.75a.75.75 0 0 1 1.5 0v.75a3.75 3.75 0 0 1-3.75 3.75H12V19.5Z" clip-rule="evenodd" />
+                    </svg>
+                    Promover la siembra y cuidado de las plantas con cada lápiz.
+                </li>
+                <li>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                        <path fill-rule="evenodd" d="M15.75 4.5a3 3 0 1 1 .825 2.942l-2.043 2.043a6.75 6.75 0 0 1 0 9.546l-1.725 1.725c.08.196.142.404.183.622l.356 1.968a.75.75 0 0 1-.582.816l-1.968.356a.75.75 0 0 1-.816-.582l-.356-1.968a4.5 4.5 0 0 0-.183-.622l-1.725-1.725a6.75 6.75 0 0 1 0-9.546l2.043-2.043A3.001 3.001 0 0 1 15.75 4.5Z" clip-rule="evenodd" />
+                </svg>
+                    Fomentar alianzas con escuelas y organizaciones ecológicas.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="navigation-buttons">
+            <button id="prevBtn" class="nav-button" disabled>Anterior</button>
+            <button id="nextBtn" class="nav-button">Siguiente</button>
+        </div>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let currentSlide = 0;
+
+        // Function to show a specific slide
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+            // Update button states
+            prevBtn.disabled = index === 0;
+            nextBtn.disabled = index === slides.length - 1;
+        }
+
+        // Event listener for next button
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < slides.length - 1) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        });
+
+        // Event listener for previous button
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        });
+
+        // Initial display of the first slide
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
